@@ -21,9 +21,9 @@ var octal = 8;
 var hexadecimal = 0XA;
 // let big: bigint = 9007199254740991n;
 // TypeScript String
-var firstName = "G";
+var first = "G";
 var title = "Backend Developer";
-var profile = "I'm ".concat(firstName, ". \nI'm a ").concat(title);
+var profile = "I'm ".concat(first, ". \nI'm a ").concat(title);
 console.log(profile);
 //TypeScript Boolean
 var hasError = false;
@@ -130,5 +130,25 @@ console.log(obj);
 function raiseError(message) {
     throw new Error(message);
 }
-raiseError("My dear bubuuuuuu");
+// raiseError("My dear bubuuuuuu")
 //TypeScript Union type
+function add(a, b) {
+    if (typeof a === 'number' && typeof b === 'number') {
+        return a + b;
+    }
+    if (typeof a === 'string' && typeof b === 'string') {
+        return a.concat(b);
+    }
+    throw new Error('Parameters must be numbers or strings');
+}
+//TS string type literal 
+var variable1;
+variable1 = "a";
+console.log(variable1); // No error
+var firstName;
+var lastName;
+var person1 = {
+    anun: "Bubu",
+    age: 21
+};
+console.log(person1);

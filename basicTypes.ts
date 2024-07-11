@@ -35,9 +35,9 @@ let hexadecimal: number = 0XA;
 // TypeScript String
 
 
-let firstName: string = `G`;
+let first: string = `G`;
 let title: string = `Backend Developer`;
-let profile: string = `I'm ${firstName}. 
+let profile: string = `I'm ${first}. 
 I'm a ${title}`;
 
 console.log(profile);
@@ -227,3 +227,43 @@ console.log(variable1); // No error
 
 //TypeScript Type Aliases
 
+type Name = string;
+
+let firstName: Name;
+let lastName: Name;
+
+type Person = {
+    anun: string ;
+    age : number ;
+}
+
+let person1: Person = {
+    anun: "Bubu",
+    age: 21
+}
+console.log(person1)
+
+
+
+
+type Personal = {
+    name: string;
+    age: number;
+  };
+  
+  type Contact = {
+    email: string;
+    phone: string;
+  };
+  
+  type Candidate = Personal & Contact;
+  
+  let candidate: Candidate = {
+    name: "Joe",
+    age: 25,
+    email: "joe@example.com",
+    phone: "(408)-123-4567"
+  };
+
+
+  
