@@ -36,4 +36,68 @@ class Personchik {
   }
 
   let dudu = new Personchik('123','BuBu','DuDu');
-//   console.log(dudu.ssn) => error
+//   console.log(dudu.ssn) => error beacause of this is private 
+
+class Employee {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public greet(): string {
+        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    }
+}
+
+const employe = new Employee('Alice', 30);
+
+console.log(employe.name);  
+console.log(employe.age);   
+console.log(employe.greet()); 
+
+
+
+
+class Panda {
+    readonly dateBirth : Date;
+
+    constructor(dateBirth:Date){
+        this.dateBirth =dateBirth
+    }
+}
+
+let pandushka  = new Panda(new Date(1999, 12, 25));
+// pandushka.birthDate = new Date(1991, 12, 25); // Compile error
+
+
+
+class Animal {
+    constructor(private name: string, private lastname: string) {}
+
+    getFullName(): string {
+        return `${this.name} ${this.lastname}`;
+    }
+
+    describe(): string {
+        return `This is ${this.name} ${this.lastname}`;
+    }    
+}
+
+
+class Dog extends Animal {
+    constructor(
+        name :string ,
+        lastname :string, 
+        private title :string ){
+            super(name ,lastname)
+        }
+}
+
+
+let pupy = new Dog('Chicha','Chacha','Huf Huf');
+
+console.log(pupy.getFullName());
+console.log(pupy.describe());
