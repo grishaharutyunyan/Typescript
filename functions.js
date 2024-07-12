@@ -75,3 +75,10 @@ function calc(a, b) {
 }
 console.log(calc(10, 20));
 console.log(calc('Hello, ', 'world!'));
+function sum(a, b, c) {
+    if (c)
+        return a + b + c;
+    return a + b;
+}
+
+
