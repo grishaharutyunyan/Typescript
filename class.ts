@@ -101,3 +101,73 @@ let pupy = new Dog('Chicha','Chacha','Huf Huf');
 
 console.log(pupy.getFullName());
 console.log(pupy.describe());
+
+
+// TypeScript Static Methods and Properties
+
+
+class Ashxtox {
+    static headcount: number = 0;
+
+    constructor(
+        private firstName: string,
+        private lastName: string,
+        private jobTitle: string) {
+
+        Ashxtox.headcount++;
+    }
+}
+
+let john = new Ashxtox('John', 'Doe', 'Front-end Developer');
+let jane = new Ashxtox('Jane', 'Doe', 'Back-end Developer');
+
+console.log(Ashxtox.headcount); 
+
+
+// TypeScript Abstract Classes
+
+
+abstract class Employeeik {
+    constructor(private firstName: string, private lastName: string) {}
+    abstract getSalary(): number;
+    get fullName(): string {
+      return `${this.firstName} ${this.lastName}`;
+    }
+    compensationStatement(): string {
+      return `${this.fullName} makes ${this.getSalary()} a month.`;
+    }
+  }
+
+
+  class FullTimeEmployee extends Employeeik {
+    constructor(firstName: string, lastName: string, private salary: number) {
+        super(firstName, lastName);
+    }
+    getSalary(): number {
+        return this.salary;
+    }
+}
+
+
+class Contractor extends Employeeik {
+    constructor(
+      firstName: string,
+      lastName: string,
+      private rate: number,
+      private hours: number
+    ) {
+      super(firstName, lastName);
+    }
+    getSalary(): number {
+      return this.rate * this.hours;
+    }
+  }
+
+
+
+
+let johns = new FullTimeEmployee('Johns', 'Doe', 12000);
+let janes = new Contractor('Janes', 'Doe', 100, 160);
+
+console.log(johns.compensationStatement());
+console.log(janes.compensationStatement());
