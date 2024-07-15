@@ -44,4 +44,9 @@ interface Shape {
   console.log(myRectangle.perimeter()); 
   
   console.log(Rectangle.description()); 
-  
+
+
+  ///
+
+
+
